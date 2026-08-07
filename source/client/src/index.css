@@ -1,0 +1,424 @@
+@import "tailwindcss";
+
+:root {
+  --ppt-ink: #202124;
+  --ppt-muted: #7e8085;
+  --ppt-faint: #d9dbde;
+  --ppt-paper: #fcfcfb;
+  --ppt-blue: #0876b8;
+  --ppt-yellow: #d0ad2a;
+  --ppt-dark: #0b0b0b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #e7e8e9; }
+body { margin: 0; min-width: 320px; background: #e7e8e9; color: var(--ppt-ink); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.ppt-portfolio { width: 100%; overflow: hidden; background: #e7e8e9; }
+.ppt-slide { position: relative; width: min(100%, 1440px); aspect-ratio: 16 / 9; margin: 0 auto 2px; overflow: hidden; background: var(--ppt-paper); color: var(--ppt-ink); }
+.ppt-slide--dark { background: var(--ppt-dark); color: #f3f3f1; }
+.ppt-slide__header { position: absolute; top: 0; left: 5.6%; right: 5.6%; height: 8.1%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ppt-faint); z-index: 4; }
+.ppt-slide--dark .ppt-slide__header { border-bottom-color: transparent; }
+.ppt-slide__section, .ppt-slide__context, .ppt-small-heading, .ppt-narrative__label, .ppt-metric span, .ppt-cover__footer, .ppt-closing__contact b { font-size: clamp(6px, 0.46vw, 9px); line-height: 1.15; letter-spacing: .025em; }
+.ppt-slide__section { color: var(--ppt-blue); font-weight: 700; text-transform: uppercase; white-space: nowrap; }
+.ppt-slide__section i { display: inline-block; width: 5px; height: 5px; margin: 0 9px 1px 0; border-radius: 50%; vertical-align: middle; background: var(--ppt-blue); }
+.ppt-slide__context { color: #a7a9ad; }
+.ppt-slide h1, .ppt-slide h2, .ppt-slide p { margin-top: 0; }
+.ppt-slide h2 { font-weight: 400; letter-spacing: -.025em; }
+
+/* Cover: original PPT black page, left copy, upper-right portrait, lower expertise bar */
+.ppt-cover__copy { position: absolute; top: 24.4%; left: 9.8%; width: 48%; }
+.ppt-cover__copy h1 { margin: 0; color: #f3f3f1; font-size: clamp(38px, 5.05vw, 74px); line-height: .92; font-weight: 400; letter-spacing: -.035em; }
+.ppt-cover__chinese { margin: 3.5% 0 0; color: #b8b8b8; font-size: clamp(14px, 1.45vw, 22px); font-weight: 400; }
+.ppt-cover__blue-rule { display: block; width: 7%; height: 2px; margin-top: 5.3%; background: var(--ppt-blue); }
+.ppt-cover__copy h2 { margin: 5.2% 0 0; color: #f2f2f0; font-size: clamp(14px, 1.25vw, 20px); line-height: 1; }
+.ppt-cover__subline { margin: 2% 0 0; max-width: 92%; color: #77787a; font-size: clamp(7px, .57vw, 10px); line-height: 1.45; }
+.ppt-cover__proofs { display: grid; grid-template-columns: 1fr 1.46fr 1.55fr; gap: 2.3%; margin-top: 6%; max-width: 94%; }
+.ppt-cover__proofs div { min-height: 52px; padding: 11px 11px 8px; border: 1px solid #313131; background: #1b1b1b; }
+.ppt-cover__proofs b { display: block; color: #ededec; font-size: clamp(7px, .55vw, 10px); font-weight: 700; }
+.ppt-cover__proofs span { display: block; margin-top: 5px; color: #858585; font-size: clamp(5px, .42vw, 7.5px); }
+.ppt-cover__portrait { position: absolute; top: 16.4%; right: 9.2%; width: 25%; height: 58.5%; overflow: hidden; border-radius: 15px; background: #202126; }
+.ppt-cover__portrait .ppt-media { height: 100%; object-position: 50% 30%; }
+.ppt-cover__footer { position: absolute; right: 0; bottom: 0; left: 0; min-height: 8.3%; display: flex; align-items: center; gap: 3.2%; padding: 0 5.7%; overflow: hidden; border-top: 1px solid #c8c8c8; color: #858585; white-space: nowrap; }
+.ppt-cover__footer span:first-child { color: #b4b4b3; font-size: .8em; }
+
+/* About */
+.ppt-about__intro { position: absolute; top: 28.1%; left: 9.7%; width: 43.8%; }
+.ppt-about__intro h2 { margin: 0; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.04; }
+.ppt-about__intro > p { margin: 7.2% 0 0; max-width: 91%; color: #52545a; font-size: clamp(8px, .56vw, 10px); line-height: 1.65; }
+.ppt-about__proofs { display: grid; grid-template-columns: 1.1fr 1.55fr 1.55fr; gap: 3%; margin-top: 12%; }
+.ppt-about__proofs div { min-height: 49px; padding: 10px 11px; border: 1px solid #bfc2c5; }
+.ppt-about__proofs b { display: block; font-size: clamp(6px, .48vw, 8.5px); font-weight: 700; }
+.ppt-about__proofs span { display: block; margin-top: 6px; color: #73757a; font-size: clamp(5px, .37vw, 6.5px); }
+.ppt-about__expertise { position: absolute; top: 29.4%; right: 9.6%; width: 36%; }
+.ppt-small-heading { margin: 0 0 7%; color: #96989b; }
+.ppt-expertise-item { position: relative; margin: 0; min-height: 43px; padding: 11px 0 8px 17px; border-bottom: 1px solid #d4d6d8; color: #33353a; font-size: clamp(8px, .62vw, 10.5px); }
+.ppt-expertise-item i { position: absolute; top: 14px; left: 1px; width: 4px; height: 4px; border-radius: 50%; background: var(--ppt-blue); }
+.ppt-about__clients { margin-top: 12%; border-top: 1px solid #d4d6d8; padding-top: 12px; }
+.ppt-about__clients b { display: block; color: #9a9ca0; font-size: clamp(5px, .37vw, 7px); font-weight: 400; }
+.ppt-about__clients span { display: block; margin-top: 8px; color: #5f6165; font-size: clamp(6px, .47vw, 8px); }
+
+/* Overview */
+.ppt-overview > h2 { position: absolute; top: 20.7%; left: 5.7%; margin: 0; font-size: clamp(24px, 2.2vw, 35px); line-height: 1; }
+.ppt-overview__table { position: absolute; top: 35.3%; right: 5.7%; left: 5.7%; }
+.ppt-overview__head, .ppt-overview__row { display: grid; grid-template-columns: 4.6% 18% 57.4% 20%; align-items: center; }
+.ppt-overview__head { min-height: 36px; border-top: 1px solid #1a1c1e; border-bottom: 1px solid #aeb1b4; color: #6c6e72; font-size: clamp(5px, .38vw, 7px); }
+.ppt-overview__row { min-height: 53px; border-bottom: 1px solid #e0e1e3; color: #46484c; font-size: clamp(7px, .52vw, 9px); }
+.ppt-overview__row > b { color: var(--ppt-blue); font-size: clamp(7px, .56vw, 10px); }
+.ppt-overview__row strong { display: block; color: #292b2e; font-size: clamp(7px, .56vw, 10px); font-weight: 500; }
+.ppt-overview__row small { display: block; margin-top: 4px; color: #a2a4a7; font-size: clamp(5px, .36vw, 6.5px); }
+.ppt-overview__result { text-align: right; }
+.ppt-overview__result strong { font-size: clamp(8px, .7vw, 12px); font-weight: 700; }
+
+/* Shared case grammar */
+.ppt-case__left h2, .ppt-wuling__content h2, .ppt-anta__copy h2, .ppt-dyson__copy h2 { margin: 0; font-size: clamp(19px, 1.58vw, 26px); line-height: 1.05; }
+.ppt-case__tagline { margin: 3.4% 0 0; color: #929498; font-size: clamp(6px, .46vw, 8px); font-style: italic; }
+.ppt-grid-two { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; row-gap: 16%; }
+.ppt-narrative { border-top: 1px solid #e1e2e3; padding-top: 10px; }
+.ppt-narrative__label { display: flex; gap: 9px; align-items: baseline; margin: 0; color: var(--ppt-blue); font-weight: 700; text-transform: uppercase; }
+.ppt-narrative__label b { min-width: 15px; font-weight: 700; }
+.ppt-narrative p { margin: 9px 0 0; color: #52545a; font-size: clamp(6px, .45vw, 8.3px); line-height: 1.52; }
+.ppt-media { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ppt-case__art { overflow: hidden; background: #e6e7e8; }
+.ppt-case__awards-top { position: absolute; top: 6.8%; left: 28.4%; display: flex; gap: 10px; z-index: 5; }
+.ppt-award-tag { display: inline-block; padding: 5px 10px; border: 1px solid var(--ppt-yellow); color: #75641a; font-size: clamp(5px, .39vw, 7px); line-height: 1; white-space: nowrap; }
+.ppt-metric { min-width: 0; text-align: center; }
+.ppt-metric strong { display: block; color: #27292c; font-size: clamp(14px, 1.22vw, 20px); line-height: 1; font-weight: 700; }
+.ppt-metric span { display: block; margin-top: 6px; color: #a3a4a8; text-transform: uppercase; }
+.ppt-metric-bar { position: absolute; display: grid; align-items: center; background: rgba(255,255,255,.92); }
+.ppt-metric-bar--three { grid-template-columns: repeat(3, 1fr); }
+.ppt-metric-row { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 8%; }
+.ppt-metric-row .ppt-metric { border-right: 1px solid #e3e4e5; }
+.ppt-metric-row .ppt-metric:last-child { border-right: 0; }
+
+/* Case 1 */
+.ppt-case--hycan .ppt-case__left { position: absolute; top: 16.9%; left: 5.7%; width: 47%; }
+.ppt-case--hycan .ppt-grid-two { margin-top: 13%; }
+.ppt-case--hycan .ppt-case__art { position: absolute; top: 10.4%; right: 5.7%; width: 43%; height: 70.8%; }
+.ppt-case--hycan .ppt-case__art .ppt-media { object-position: left top; }
+.ppt-case--hycan .ppt-metric-bar { right: 0; bottom: 0; left: 0; min-height: 12%; }
+
+/* Case 2 */
+.ppt-case--film .ppt-case__left { position: absolute; top: 25%; left: 5.7%; width: 48%; }
+.ppt-case--film .ppt-case__left h2 { margin-bottom: 9%; }
+.ppt-case--film .ppt-case__left .ppt-narrative { display: grid; grid-template-columns: 16% 1fr; min-height: 54px; padding-top: 7px; }
+.ppt-case--film .ppt-case__left .ppt-narrative p { margin-top: 0; }
+.ppt-case__right--film { position: absolute; top: 14%; right: 5.7%; width: 39%; }
+.ppt-case__right--film .ppt-case__art { height: 46%; aspect-ratio: 1.75 / 1; }
+.ppt-case__right--film .ppt-metric-row { margin-top: 15%; }
+.ppt-case__award-bottom { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15%; }
+
+/* Case 3 */
+.ppt-case--covid .ppt-case__awards-top { left: 32%; }
+.ppt-covid__media { position: absolute; top: 8.1%; bottom: 0; left: 0; width: 32%; margin: 0; overflow: hidden; background: #24282d; }
+.ppt-covid__media .ppt-media { height: 89%; object-position: left center; }
+.ppt-covid__media div { position: absolute; right: 9%; bottom: 4%; left: 9%; color: #fafafa; font-size: clamp(13px, 1.2vw, 20px); line-height: 1.1; }
+.ppt-covid__content { position: absolute; top: 16.4%; left: 37%; right: 6%; }
+.ppt-covid__quote { margin: 0 0 12%; color: #a0a2a6; text-align: right; font-size: clamp(7px, .54vw, 10px); font-style: italic; }
+.ppt-covid__content .ppt-grid-two { row-gap: 37%; }
+.ppt-covid__metrics { position: absolute; right: 6%; bottom: 0; left: 32%; min-height: 13.5%; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #dfe0e2; }
+.ppt-covid__metrics .ppt-metric { padding-top: 17px; border-right: 1px solid #dedfe0; }
+.ppt-covid__metrics .ppt-metric:last-child { border-right: 0; }
+.ppt-covid__metrics .ppt-metric:last-child strong { font-size: clamp(12px, 1vw, 17px); }
+
+/* Case 4 */
+.ppt-wuling__media { position: absolute; top: 8.1%; bottom: 8.8%; left: 0; width: 26.7%; overflow: hidden; background: #f1dc4e; }
+.ppt-wuling__media .ppt-media { object-position: 38% center; }
+.ppt-wuling__content { position: absolute; top: 20%; left: 30.1%; right: 5.7%; }
+.ppt-wuling__content .ppt-grid-two { margin-top: 8%; row-gap: 23%; }
+.ppt-wuling__metrics { position: absolute; right: 5.7%; bottom: 0; left: 26.7%; height: 12%; display: grid; grid-template-columns: 19% 18% 1fr; align-items: center; }
+.ppt-wuling__metrics .ppt-metric { border-right: 1px solid #dedfe1; }
+.ppt-wordmarks { display: flex; justify-content: flex-end; gap: 9px; padding-right: 1px; }
+.ppt-wordmarks span, .ppt-chip-row span { padding: 6px 10px; background: #f2f2f1; color: #76787b; font-size: clamp(5px, .38vw, 7px); }
+
+/* Case 5 */
+.ppt-anta__copy { position: absolute; top: 18.5%; left: 12.7%; width: 39.5%; }
+.ppt-anta__copy .ppt-chip-row { margin: 7% 0 8%; }
+.ppt-chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.ppt-anta__copy .ppt-narrative { display: grid; grid-template-columns: 16% 1fr; min-height: 65px; padding-top: 10px; }
+.ppt-anta__copy .ppt-narrative p { margin-top: 0; }
+.ppt-anta__side { position: absolute; top: 12%; right: 5.1%; width: 38.2%; }
+.ppt-anta__side .ppt-case__art { width: 100%; aspect-ratio: 1.5 / 1; }
+.ppt-anta__side .ppt-metric-row { margin-top: 5%; }
+
+/* Case 6 */
+.ppt-suv__hero { position: absolute; top: 8.1%; left: 0; right: 0; height: 33%; overflow: hidden; background: #24292f; }
+.ppt-suv__hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(2,7,12,.65), rgba(2,7,12,.02) 57%); }
+.ppt-suv__hero .ppt-media { object-position: center 45%; }
+.ppt-suv__overlay { position: absolute; z-index: 1; top: 39%; left: 9.5%; color: #fff; }
+.ppt-suv__overlay h2 { margin: 0; font-size: clamp(19px, 1.65vw, 27px); font-weight: 400; line-height: 1; }
+.ppt-suv__overlay p { margin: 14px 0 0; color: #d4d6d8; font-size: clamp(6px, .46vw, 8px); }
+.ppt-suv__columns { position: absolute; top: 41.1%; right: 0; left: 0; bottom: 13%; display: grid; grid-template-columns: repeat(4, 1fr); }
+.ppt-suv__columns .ppt-narrative { padding: 9% 10% 0; border-top: 0; border-right: 1px solid #d9dbde; }
+.ppt-suv__columns .ppt-narrative:last-child { border-right: 0; }
+.ppt-suv__columns .ppt-narrative p { margin-top: 13%; }
+.ppt-suv__metrics { position: absolute; right: 0; bottom: 0; left: 0; height: 13%; display: grid; grid-template-columns: 19% 14% 31% 1fr; align-items: center; border-top: 1px solid #202124; }
+.ppt-suv__metrics .ppt-metric { padding: 0 8%; text-align: left; border-right: 1px solid #dedfe1; }
+.ppt-suv__metrics .ppt-metric strong { font-size: clamp(12px, 1.1vw, 18px); }
+.ppt-suv__metrics em { padding: 0 8%; color: #9b9da0; font-size: clamp(5px, .4vw, 7px); }
+
+/* Case 7 */
+.ppt-dyson__copy { position: absolute; top: 17.3%; left: 16.7%; width: 39.2%; }
+.ppt-dyson__copy .ppt-chip-row { margin: 6.5% 0 7%; }
+.ppt-dyson__copy .ppt-narrative { display: grid; grid-template-columns: 16% 1fr; min-height: 51px; padding-top: 9px; }
+.ppt-dyson__copy .ppt-narrative p { margin-top: 0; }
+.ppt-dyson__side { position: absolute; top: 12%; right: 5.1%; width: 36.2%; }
+.ppt-dyson__side .ppt-case__art { width: 100%; aspect-ratio: 1.36 / 1; }
+.ppt-dyson__side .ppt-metric-row { margin-top: 5.5%; }
+.ppt-dyson__side .ppt-metric strong { font-size: clamp(13px, 1.08vw, 18px); }
+
+/* Closing */
+.ppt-closing__copy { position: absolute; top: 21.6%; left: 13.8%; width: 46%; }
+.ppt-closing__copy h2 { margin: 0; color: #f1f1ef; font-size: clamp(38px, 4.2vw, 65px); line-height: .94; font-weight: 400; letter-spacing: -.04em; }
+.ppt-closing__copy > p { width: 67%; margin: 4.3% 0 0; color: #858585; font-size: clamp(8px, .58vw, 10px); line-height: 1.45; }
+.ppt-closing__contact { display: flex; gap: 10%; margin-top: 12%; }
+.ppt-closing__contact div { min-width: 110px; }
+.ppt-closing__contact b { display: block; color: #666; font-weight: 400; }
+.ppt-closing__contact a, .ppt-closing__contact span { display: block; margin-top: 11px; color: #d0d0ce; font-size: clamp(7px, .52vw, 9px); text-decoration: none; }
+.ppt-closing__contact a:focus-visible { outline: 1px solid var(--ppt-blue); outline-offset: 4px; }
+.ppt-closing__monogram { position: absolute; right: 6%; bottom: 7%; color: #151515; font-size: clamp(125px, 16vw, 245px); font-weight: 700; line-height: .7; letter-spacing: -.14em; }
+.ppt-closing__footer { position: absolute; right: 0; bottom: 0; left: 0; height: 8.4%; display: flex; align-items: center; justify-content: space-between; padding: 0 13.8%; border-top: 1px solid #c5c5c5; color: #5f6061; font-size: clamp(5px, .38vw, 7px); }
+
+@media (max-width: 720px) {
+  html { scroll-behavior: auto; }
+  .ppt-slide { width: 100%; min-height: 780px; aspect-ratio: auto; }
+  .ppt-slide__header { height: 58px; left: 20px; right: 20px; }
+  .ppt-slide__context { display: none; }
+  .ppt-cover { min-height: 670px; }
+  .ppt-cover__copy { top: 122px; left: 32px; width: 58%; }
+  .ppt-cover__copy h1 { font-size: 47px; }
+  .ppt-cover__portrait { top: 98px; right: 24px; width: 34%; height: 290px; border-radius: 10px; }
+  .ppt-cover__subline { max-width: 100%; font-size: 9px; }
+  .ppt-cover__proofs { grid-template-columns: 1fr; gap: 7px; margin-top: 28px; }
+  .ppt-cover__proofs div { min-height: 38px; padding: 8px; }
+  .ppt-cover__footer { display: none; }
+  .ppt-about, .ppt-overview { min-height: 760px; }
+  .ppt-about__intro, .ppt-about__expertise { position: absolute; left: 28px; right: 28px; width: auto; }
+  .ppt-about__intro { top: 108px; }
+  .ppt-about__intro h2 { font-size: 27px; }
+  .ppt-about__intro > p { max-width: 100%; font-size: 10px; }
+  .ppt-about__proofs { margin-top: 28px; }
+  .ppt-about__expertise { top: 480px; }
+  .ppt-small-heading { margin-bottom: 14px; }
+  .ppt-expertise-item { min-height: 33px; padding-top: 8px; }
+  .ppt-about__clients { margin-top: 22px; }
+  .ppt-overview { min-height: 845px; }
+  .ppt-overview > h2 { top: 110px; left: 20px; right: 20px; font-size: 27px; }
+  .ppt-overview__table { top: 190px; left: 20px; right: 20px; }
+  .ppt-overview__head, .ppt-overview__row { grid-template-columns: 11% 20% 50% 19%; }
+  .ppt-overview__row { min-height: 75px; font-size: 8px; }
+  .ppt-overview__row strong { font-size: 9px; }
+  .ppt-overview__result strong { font-size: 10px; }
+  .ppt-case { min-height: 900px; }
+  .ppt-case__awards-top { top: 72px; left: 20px; right: 20px; overflow: hidden; }
+  .ppt-case__awards-top .ppt-award-tag { font-size: 6px; }
+  .ppt-case--hycan .ppt-case__left, .ppt-case--film .ppt-case__left, .ppt-wuling__content, .ppt-anta__copy, .ppt-dyson__copy { top: 105px; left: 22px; right: 22px; width: auto; }
+  .ppt-case__left h2, .ppt-wuling__content h2, .ppt-anta__copy h2, .ppt-dyson__copy h2 { font-size: 26px; }
+  .ppt-grid-two { column-gap: 24px; row-gap: 25px; }
+  .ppt-narrative p { font-size: 9px; }
+  .ppt-case--hycan .ppt-case__art { top: 560px; right: 22px; left: 22px; width: auto; height: 250px; }
+  .ppt-case--hycan .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
+  .ppt-case--film { min-height: 1020px; }
+  .ppt-case--film .ppt-case__left { top: 112px; }
+  .ppt-case--film .ppt-case__left .ppt-narrative, .ppt-anta__copy .ppt-narrative, .ppt-dyson__copy .ppt-narrative { min-height: 48px; }
+  .ppt-case__right--film { top: 615px; left: 22px; right: 22px; width: auto; }
+  .ppt-case__right--film .ppt-case__art { aspect-ratio: 1.5 / 1; }
+  .ppt-case__right--film .ppt-metric-row { margin-top: 18px; }
+  .ppt-covid__media { top: 58px; left: 0; width: 100%; height: 270px; bottom: auto; }
+  .ppt-covid__media .ppt-media { height: 100%; }
+  .ppt-covid__media div { font-size: 16px; }
+  .ppt-covid__content { top: 365px; left: 22px; right: 22px; }
+  .ppt-covid__quote { margin-bottom: 24px; }
+  .ppt-covid__metrics { left: 22px; right: 22px; bottom: 22px; min-height: 72px; }
+  .ppt-covid__metrics .ppt-metric { padding-top: 9px; }
+  .ppt-wuling { min-height: 1030px; }
+  .ppt-wuling__media { top: 58px; left: 0; width: 100%; height: 255px; bottom: auto; }
+  .ppt-wuling__content { top: 350px; }
+  .ppt-wuling__metrics { right: 22px; bottom: 20px; left: 22px; height: 75px; }
+  .ppt-wordmarks { flex-direction: column; gap: 3px; }
+  .ppt-anta { min-height: 1090px; }
+  .ppt-anta__copy .ppt-chip-row { margin: 18px 0; }
+  .ppt-anta__side { top: 690px; left: 22px; right: 22px; width: auto; }
+  .ppt-suv { min-height: 950px; }
+  .ppt-suv__hero { top: 58px; height: 230px; }
+  .ppt-suv__overlay { top: 72px; left: 22px; }
+  .ppt-suv__overlay h2 { font-size: 24px; }
+  .ppt-suv__columns { top: 310px; bottom: 115px; grid-template-columns: 1fr 1fr; }
+  .ppt-suv__columns .ppt-narrative { padding: 18px; }
+  .ppt-suv__metrics { height: 95px; grid-template-columns: 1fr 1fr; }
+  .ppt-suv__metrics .ppt-metric:nth-child(3), .ppt-suv__metrics em { display: none; }
+  .ppt-dyson { min-height: 1010px; }
+  .ppt-dyson__copy .ppt-chip-row { margin: 18px 0; }
+  .ppt-dyson__side { top: 660px; left: 22px; right: 22px; width: auto; }
+  .ppt-closing { min-height: 620px; }
+  .ppt-closing__copy { top: 110px; left: 38px; width: 78%; }
+  .ppt-closing__copy h2 { font-size: 46px; }
+  .ppt-closing__copy > p { width: 100%; font-size: 10px; }
+  .ppt-closing__contact { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 48px; }
+  .ppt-closing__footer { padding: 0 38px; }
+  .ppt-closing__footer span { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+/* Readability pass: preserve the source-PPT hierarchy while making web text legible at normal browser zoom. */
+.ppt-slide__section,
+.ppt-slide__context,
+.ppt-small-heading,
+.ppt-narrative__label,
+.ppt-metric span,
+.ppt-cover__footer,
+.ppt-closing__contact b {
+  font-size: clamp(7px, 0.58vw, 11px);
+  letter-spacing: .04em;
+}
+.ppt-slide__context,
+.ppt-cover__subline,
+.ppt-case__tagline { color: #73767b; }
+.ppt-cover__subline { font-size: clamp(9px, .72vw, 12px); line-height: 1.5; }
+.ppt-cover__proofs b { font-size: clamp(8px, .63vw, 11px); }
+.ppt-cover__proofs span { color: #babbbc; font-size: clamp(7px, .5vw, 9px); }
+.ppt-about__intro > p { color: #3f4247; font-size: clamp(10px, .77vw, 13px); line-height: 1.58; }
+.ppt-about__proofs b { font-size: clamp(7px, .56vw, 10px); }
+.ppt-about__proofs span { color: #62656a; font-size: clamp(6.5px, .49vw, 8.5px); }
+.ppt-expertise-item { color: #2d3034; font-size: clamp(9px, .72vw, 12px); }
+.ppt-about__clients b { font-size: clamp(6.5px, .5vw, 8px); }
+.ppt-about__clients span { color: #4e5156; font-size: clamp(7.5px, .57vw, 9.5px); }
+.ppt-overview__head { font-size: clamp(6.5px, .5vw, 8.5px); }
+.ppt-overview__row { color: #303338; font-size: clamp(8px, .66vw, 11px); }
+.ppt-overview__row > b { font-size: clamp(8px, .66vw, 11px); }
+.ppt-overview__row strong { font-size: clamp(8.5px, .7vw, 12px); }
+.ppt-overview__row small { color: #73767b; font-size: clamp(6.5px, .51vw, 8.5px); }
+.ppt-overview__result strong { font-size: clamp(10px, .82vw, 14px); }
+.ppt-case__left h2,
+.ppt-wuling__content h2,
+.ppt-anta__copy h2,
+.ppt-dyson__copy h2 { font-size: clamp(22px, 1.76vw, 29px); }
+.ppt-case__tagline { font-size: clamp(8px, .62vw, 10px); }
+.ppt-narrative p { color: #35383d; font-size: clamp(10px, .8vw, 13px); line-height: 1.5; }
+.ppt-award-tag { font-size: clamp(7px, .52vw, 9px); }
+.ppt-metric strong { font-size: clamp(17px, 1.36vw, 23px); }
+.ppt-metric span { color: #777a80; font-size: clamp(7px, .54vw, 9px); }
+.ppt-covid__quote { color: #7b7e83; font-size: clamp(9px, .69vw, 12px); }
+.ppt-covid__metrics .ppt-metric:last-child strong { font-size: clamp(14px, 1.12vw, 19px); }
+.ppt-wordmarks span,
+.ppt-chip-row span { color: #55595f; font-size: clamp(7px, .52vw, 9px); }
+.ppt-suv__overlay p { color: #f1f2f3; font-size: clamp(8px, .62vw, 10px); }
+.ppt-suv__metrics .ppt-metric strong { font-size: clamp(14px, 1.16vw, 19px); }
+.ppt-suv__metrics em { color: #71747a; font-size: clamp(7px, .53vw, 9px); }
+.ppt-closing__copy > p { color: #b2b3b5; font-size: clamp(10px, .74vw, 12px); line-height: 1.5; }
+.ppt-closing__contact a,
+.ppt-closing__contact span { font-size: clamp(8px, .62vw, 10px); }
+.ppt-closing__footer { color: #94969a; font-size: clamp(7px, .52vw, 9px); }
+
+@media (max-width: 720px) {
+  .ppt-slide__section,
+  .ppt-small-heading,
+  .ppt-narrative__label,
+  .ppt-metric span,
+  .ppt-closing__contact b { font-size: 9px; }
+  .ppt-cover__subline { font-size: 11px; }
+  .ppt-cover__proofs b { font-size: 10px; }
+  .ppt-cover__proofs span { font-size: 8px; }
+  .ppt-about__intro > p { font-size: 12px; }
+  .ppt-about__proofs b { font-size: 9px; }
+  .ppt-about__proofs span { font-size: 8px; }
+  .ppt-expertise-item { font-size: 11px; }
+  .ppt-overview__head { font-size: 8px; }
+  .ppt-overview__row { font-size: 10px; }
+  .ppt-overview__row strong { font-size: 10px; }
+  .ppt-overview__row small { font-size: 8px; }
+  .ppt-overview__result strong { font-size: 12px; }
+  .ppt-narrative p { font-size: 11px; line-height: 1.55; }
+  .ppt-award-tag { font-size: 7px; }
+  .ppt-metric strong { font-size: 20px; }
+  .ppt-metric span { font-size: 8px; }
+  .ppt-covid__quote { font-size: 11px; }
+  .ppt-wordmarks span,
+  .ppt-chip-row span { font-size: 8px; }
+  .ppt-suv__overlay p { font-size: 10px; }
+  .ppt-closing__copy > p { font-size: 11px; }
+  .ppt-closing__contact a,
+  .ppt-closing__contact span { font-size: 10px; }
+}
+
+
+/* Second readability pass: one further web-size step without changing the source PPT composition. */
+.ppt-slide__section,
+.ppt-slide__context,
+.ppt-small-heading,
+.ppt-narrative__label,
+.ppt-metric span,
+.ppt-cover__footer,
+.ppt-closing__contact b {
+  font-size: clamp(8px, 0.64vw, 12px);
+}
+.ppt-cover__subline { font-size: clamp(10px, .78vw, 13px); }
+.ppt-cover__proofs b { font-size: clamp(9px, .68vw, 12px); }
+.ppt-cover__proofs span { font-size: clamp(8px, .56vw, 10px); }
+.ppt-about__intro > p { font-size: clamp(11px, .86vw, 14px); line-height: 1.6; }
+.ppt-about__proofs b { font-size: clamp(8px, .62vw, 11px); }
+.ppt-about__proofs span { font-size: clamp(7px, .54vw, 9.5px); }
+.ppt-expertise-item { font-size: clamp(10px, .78vw, 13px); }
+.ppt-about__clients b { font-size: clamp(7px, .54vw, 9px); }
+.ppt-about__clients span { font-size: clamp(8px, .63vw, 10.5px); }
+.ppt-overview__head { font-size: clamp(7px, .56vw, 9px); }
+.ppt-overview__row { font-size: clamp(9px, .72vw, 12px); }
+.ppt-overview__row > b { font-size: clamp(9px, .72vw, 12px); }
+.ppt-overview__row strong { font-size: clamp(9.5px, .76vw, 13px); }
+.ppt-overview__row small { font-size: clamp(7px, .56vw, 9.5px); }
+.ppt-overview__result strong { font-size: clamp(11px, .9vw, 15px); }
+.ppt-case__left h2,
+.ppt-wuling__content h2,
+.ppt-anta__copy h2,
+.ppt-dyson__copy h2 { font-size: clamp(23px, 1.88vw, 31px); }
+.ppt-case__tagline { font-size: clamp(9px, .7vw, 11px); }
+.ppt-narrative p { color: #2c2f34; font-size: clamp(11px, .88vw, 14.5px); line-height: 1.56; }
+.ppt-award-tag { font-size: clamp(8px, .6vw, 10px); }
+.ppt-metric strong { font-size: clamp(18px, 1.45vw, 25px); }
+.ppt-metric span { font-size: clamp(8px, .62vw, 10px); }
+.ppt-covid__quote { font-size: clamp(10px, .76vw, 13px); }
+.ppt-covid__metrics .ppt-metric:last-child strong { font-size: clamp(15px, 1.2vw, 20px); }
+.ppt-wordmarks span,
+.ppt-chip-row span { font-size: clamp(8px, .6vw, 10px); }
+.ppt-suv__overlay p { font-size: clamp(9px, .7vw, 11px); }
+.ppt-suv__metrics .ppt-metric strong { font-size: clamp(15px, 1.23vw, 20px); }
+.ppt-suv__metrics em { font-size: clamp(8px, .6vw, 10px); }
+.ppt-closing__copy > p { font-size: clamp(11px, .82vw, 13px); }
+.ppt-closing__contact a,
+.ppt-closing__contact span { font-size: clamp(9px, .7vw, 11px); }
+.ppt-closing__footer { font-size: clamp(8px, .58vw, 10px); }
+
+@media (max-width: 720px) {
+  .ppt-slide__section,
+  .ppt-small-heading,
+  .ppt-narrative__label,
+  .ppt-metric span,
+  .ppt-closing__contact b { font-size: 10px; }
+  .ppt-cover__subline { font-size: 12px; }
+  .ppt-cover__proofs b { font-size: 11px; }
+  .ppt-cover__proofs span { font-size: 9px; }
+  .ppt-about__intro > p { font-size: 13px; }
+  .ppt-about__proofs b { font-size: 10px; }
+  .ppt-about__proofs span { font-size: 9px; }
+  .ppt-expertise-item { font-size: 12px; }
+  .ppt-overview__head { font-size: 9px; }
+  .ppt-overview__row { font-size: 11px; }
+  .ppt-overview__row strong { font-size: 11px; }
+  .ppt-overview__row small { font-size: 9px; }
+  .ppt-overview__result strong { font-size: 13px; }
+  .ppt-narrative p { font-size: 12px; line-height: 1.58; }
+  .ppt-award-tag { font-size: 8px; }
+  .ppt-metric strong { font-size: 22px; }
+  .ppt-metric span { font-size: 9px; }
+  .ppt-covid__quote { font-size: 12px; }
+  .ppt-wordmarks span,
+  .ppt-chip-row span { font-size: 9px; }
+  .ppt-suv__overlay p { font-size: 11px; }
+  .ppt-closing__copy > p { font-size: 12px; }
+  .ppt-closing__contact a,
+  .ppt-closing__contact span { font-size: 11px; }
+}
