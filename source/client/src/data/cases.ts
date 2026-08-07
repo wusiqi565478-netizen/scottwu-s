@@ -18,6 +18,42 @@ export interface CaseStudy {
 
 export const cases: CaseStudy[] = [
   {
+    id: 'jeep-trailhawk-selec-speed',
+    client: 'Jeep × GAC',
+    title: {
+      zh: 'Jeep 自由光 Trailhawk® — 智能攀岩模式',
+      en: 'Jeep Cherokee Trailhawk® — Selec-Speed Campaign',
+    },
+    tagline: {
+      zh: '降低消费者对越野驾驶复杂度的心理认知门槛',
+      en: 'Lowering the psychological barrier to professional off-roading',
+    },
+    awards: [],
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/uQGHBhEqYEVTsWoa.jpg',
+    background: {
+      zh: '越野常被视为专业玩家的“高门槛运动”：既需要复杂的车辆操控，也要求驾驶者具备丰富经验。对于普通驾驶者而言，越野的技术难度与操作压力，往往会阻碍他们尝试这一体验。',
+      en: 'Off-roading is often perceived as an exclusive sport with a high barrier to entry, requiring complex vehicle handling and extensive driving experience. For average drivers, the technical difficulty and operational pressure often deter them from attempting the experience.',
+    },
+    insight: {
+      zh: '用户并非不向往越野的自由与挑战，而是害怕“不会操作”“驾驭不了”。如果能够将复杂的越野驾驶流程简化，让用户把注意力集中在最核心的方向控制上，专业越野能力便能变得更易感知、更愿尝试。',
+      en: 'Consumers do not lack the desire for the freedom and challenge of off-roading; rather, they fear "not knowing how to operate" or "losing control." If the complex off-road driving process could be simplified, allowing users to focus purely on steering, professional off-road capabilities would become far more accessible and appealing.',
+    },
+    action: {
+      zh: '围绕全新自由光 Trailhawk® 的 Selec-Speed 智能攀岩模式，提出“今天起，‘傻瓜’也能越野了”的传播主张，通过视频创意将专业越野能力转化为直观操作体验。只需按下 4WD LOW、开启攀岩模式、设定爬坡速度，车辆即可辅助驾驶者完成攀爬脱困，用户只需专注把控方向盘。',
+      en: 'Centering on the Selec-Speed Crawl Control of the new Jeep Cherokee Trailhawk®, we launched the campaign "From Today, Even a \'Fool\' Can Off-Road." Through creative video content, we translated professional off-road capabilities into an intuitive, effortless operation: simply engage 4WD LOW, activate Selec-Speed, set the crawl speed, and steer — the vehicle automatically manages throttle and braking to conquer complex terrains.',
+    },
+    result: {
+      zh: '案例通过“傻瓜式操作”的反差表达，降低了消费者对越野驾驶复杂度的心理认知门槛，并将 Selec-Speed 智能攀岩模式的产品优势转译为“轻松实现专业越野”的用户价值。',
+      en: 'By leveraging the contrast of "foolproof operation," the campaign successfully lowered the perceived psychological barrier to off-road driving, translating the technical superiority of the Selec-Speed system into the clear consumer value of "effortless professional off-roading."',
+    },
+    metrics: [
+      { value: '"Foolproof"', label: { zh: '核心创意主张', en: 'Core Creative Concept' } },
+      { value: 'Selec-Speed', label: { zh: '智能攀岩模式', en: 'Crawl Control' } },
+      { value: 'Effortless', label: { zh: '越野体验降维', en: 'Off-Road Experience' } },
+    ],
+    tags: ['产品营销', '视频创意', '汽车'],
+  },
+  {
     id: 'hycan-lingcage',
     client: 'HYCAN 合创汽车',
     title: {

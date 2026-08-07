@@ -3,10 +3,19 @@ import { cases } from "@/data/cases";
 const portrait =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/rLhOZusYtucyAeIu.webp";
 
-const [hycan, jeepFilm, jeepCovid, wuling, anta, jeepSuv, dyson] = cases;
+const [jeepTrailhawk, hycan, jeepFilm, jeepCovid, wuling, anta, jeepSuv, dyson] = cases;
 
 const short = (copy: string, limit: number) =>
   copy.length > limit ? `${copy.slice(0, limit).trim()}…` : copy;
+
+// Preserve the established seven-case sequence in the overview, then append the new Trailhawk case.
+const overviewCases = [...cases.slice(1), cases[0]];
+
+const trailhawkImages = [
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/vofVOrTwQxStLcLm.jpg',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/WxEqhBKrRkubbTiC.jpg',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/uQGHBhEqYEVTsWoa.jpg',
+];
 
 function SlideChrome({
   label,
@@ -115,10 +124,10 @@ export default function PptPortfolio() {
       </SlideChrome>
 
       <SlideChrome label="SELECTED WORK" context="Scott Wu · Selected Work" className="ppt-overview">
-        <h2>7 Cases Across Automotive, Lifestyle &amp; E-Commerce</h2>
+        <h2>8 Cases Across Automotive, Lifestyle &amp; E-Commerce</h2>
         <div className="ppt-overview__table">
           <div className="ppt-overview__head"><span>#</span><span>CLIENT</span><span>CAMPAIGN</span><span>KEY RESULT</span></div>
-          {cases.map((item, index) => (
+          {overviewCases.map((item, index) => (
             <article className="ppt-overview__row" key={item.id}>
               <b>{String(index + 1).padStart(2, "0")}</b>
               <span>{item.client.replace(" × ", " × ")}</span>
@@ -226,6 +235,23 @@ export default function PptPortfolio() {
           <Narrative index="04" label="RESULT">{short(dyson.result.en, 245)}</Narrative>
         </section>
         <section className="ppt-dyson__side"><div className="ppt-case__art"><Media src={dyson.image} alt={dyson.title.en} /></div><div className="ppt-metric-row"><Metric value="5+" label="PLATFORMS COVERED" /><Metric value="10+" label="CELEBRITY STYLISTS" /><Metric value="Authority" label="HAIR TECH POSITIONING" /></div></section>
+      </SlideChrome>
+
+      <SlideChrome label="CASE 08" context="Jeep Cherokee Trailhawk®" className="ppt-case ppt-case--trailhawk">
+        <section className="ppt-case__left">
+          <h2>Jeep Cherokee Trailhawk®<br />Selec-Speed Campaign</h2>
+          <p className="ppt-case__tagline">Lowering the psychological barrier to professional off-roading</p>
+          <div className="ppt-grid-two">
+            <Narrative index="01" label="BACKGROUND">{short(jeepTrailhawk.background.en, 230)}</Narrative>
+            <Narrative index="02" label="INSIGHT">{short(jeepTrailhawk.insight.en, 230)}</Narrative>
+            <Narrative index="03" label="ACTION">{short(jeepTrailhawk.action.en, 270)}</Narrative>
+            <Narrative index="04" label="RESULT">{short(jeepTrailhawk.result.en, 240)}</Narrative>
+          </div>
+        </section>
+        <section className="ppt-trailhawk__visuals" aria-label="Trailhawk Selec-Speed campaign visuals">
+          {trailhawkImages.map((src, index) => <div key={src}><Media src={src} alt={`${jeepTrailhawk.title.en} creative ${index + 1}`} /></div>)}
+        </section>
+        <footer className="ppt-metric-bar ppt-metric-bar--three">{jeepTrailhawk.metrics.map((m) => <Metric key={m.value} value={m.value} label={m.label.en} />)}</footer>
       </SlideChrome>
 
       <SlideChrome label="GET IN TOUCH" dark className="ppt-closing">

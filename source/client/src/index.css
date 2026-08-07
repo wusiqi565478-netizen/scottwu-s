@@ -422,3 +422,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ppt-closing__contact a,
   .ppt-closing__contact span { font-size: 11px; }
 }
+
+
+/* Case 08: Trailhawk */
+.ppt-case--trailhawk .ppt-case__left { position: absolute; top: 16.9%; left: 5.7%; width: 47%; }
+.ppt-case--trailhawk .ppt-grid-two { margin-top: 13%; }
+.ppt-trailhawk__visuals { position: absolute; top: 10.4%; right: 5.7%; width: 43%; height: 70.8%; display: grid; grid-template-rows: repeat(3, 1fr); gap: 8px; }
+.ppt-trailhawk__visuals > div { overflow: hidden; background: #eef0ef; }
+.ppt-trailhawk__visuals .ppt-media { object-fit: contain; object-position: center; }
+.ppt-case--trailhawk .ppt-metric-bar { right: 0; bottom: 0; left: 0; min-height: 12%; }
+
+@media (max-width: 720px) {
+  .ppt-case--trailhawk .ppt-case__left { top: 105px; left: 22px; right: 22px; width: auto; }
+  .ppt-trailhawk__visuals { top: 560px; right: 22px; left: 22px; width: auto; height: 250px; gap: 5px; }
+  .ppt-case--trailhawk .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
+}
