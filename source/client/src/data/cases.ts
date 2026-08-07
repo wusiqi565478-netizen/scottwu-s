@@ -18,6 +18,42 @@ export interface CaseStudy {
 
 export const cases: CaseStudy[] = [
   {
+    id: 'jeep-journey-to-light',
+    client: 'Jeep × GAC',
+    title: {
+      zh: 'Jeep 自由光「寻光之旅」互动插画电影 H5',
+      en: 'Jeep Cherokee "Journey to the Light" Interactive H5',
+    },
+    tagline: {
+      zh: '建立产品与都市进阶人群内心需求之间的情绪连接',
+      en: 'Connecting product positioning with the inner aspirations of urban youth',
+    },
+    awards: [],
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/SbJRcqJKzZQktFPy.png',
+    background: {
+      zh: '2019 年，Jeep 推出全新自由光。面对身处都市、正处于人生进阶阶段的年轻人群，品牌希望跳脱传统车型功能沟通，以更具情绪感染力的方式建立产品与用户内心需求之间的连接。',
+      en: 'In 2019, Jeep launched the new Cherokee. Targeting young urbanites navigating pivotal stages of personal and career advancement, the brand sought to move beyond conventional feature-driven communication, aiming instead to forge a deeper, emotionally resonant connection between the product and the inner aspirations of its audience.',
+    },
+    insight: {
+      zh: '“光”不仅是一种自然景象，更象征着希望、自由与前行的力量。当人们需要光，意味着仍在积极寻找方向；当人们追逐光，代表着不甘停留、勇于进阶；而当人们找到光，则意味着拥有无畏前行的勇气。对于在摩登都市中奔赴未来的人而言，每个人都需要一束照进内心的微光。',
+      en: '"Light" is more than a natural phenomenon; it symbolizes hope, freedom, and the drive to move forward. When people seek light, it means they are actively searching for direction; when they chase it, it represents a refusal to stand still and the courage to advance. For those striving for a better future in modern metropolises, everyone needs a glimmer of light to illuminate their inner world.',
+    },
+    action: {
+      zh: 'Jeep 以“光”为创意原点，打造 2019 Jeep 自由光「寻光之旅」互动插画电影 H5。内容以广州“小蛮腰”、北京“大裤衩”、上海“东方明珠”等都市地标为叙事场景，将城市生活、人生进阶与内心寻找光亮的情绪串联起来。用户可通过扫码进入互动体验，在插画电影中寻找“照亮内心世界的那束光”，并在沉浸式故事中感受自由光所传递的温暖、陪伴与向前力量。',
+      en: 'Using "Light" as the core creative motif, Jeep developed the 2019 Cherokee "Journey to the Light" interactive illustrated film (H5). Set against iconic urban landmarks like the Canton Tower, CCTV Headquarters, and the Oriental Pearl Tower, the narrative intertwined city life, personal growth, and the emotional quest for light. Users entered the experience via QR code, embarking on a journey to "find the light that illuminates their inner world," immersing themselves in the warmth, companionship, and forward momentum the Cherokee represents.',
+    },
+    result: {
+      zh: '项目以互动插画电影的形式，将全新 Jeep 自由光与“希望、自由、无畏前行”的品牌情绪价值建立关联；同时借助城市地标和扫码互动机制，增强了用户的代入感与参与感。',
+      en: 'Through the format of an interactive illustrated film, the project successfully associated the new Jeep Cherokee with the emotional brand values of "hope, freedom, and fearless advancement." The use of familiar urban landmarks and scan-to-interact mechanics significantly enhanced user immersion and engagement.',
+    },
+    metrics: [
+      { value: '"Journey to the Light"', label: { zh: '核心创意主张', en: 'Core Creative Concept' } },
+      { value: 'Interactive H5', label: { zh: '传播形式', en: 'Format' } },
+      { value: 'Emotional Resonance', label: { zh: '品牌价值', en: 'Brand Value' } },
+    ],
+    tags: ['互动H5', '插画视觉', '情感营销', '汽车'],
+  },
+  {
     id: 'jeep-trailhawk-selec-speed',
     client: 'Jeep × GAC',
     title: {

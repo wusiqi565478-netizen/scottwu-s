@@ -437,3 +437,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ppt-trailhawk__visuals { top: 560px; right: 22px; left: 22px; width: auto; height: 250px; gap: 5px; }
   .ppt-case--trailhawk .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
 }
+
+
+/* Case 09: Journey to the Light */
+.ppt-case--journey .ppt-case__left { position: absolute; top: 16.9%; left: 5.7%; width: 47%; }
+.ppt-case--journey .ppt-grid-two { margin-top: 13%; }
+.ppt-journey__visuals { position: absolute; top: 10.4%; right: 5.7%; width: 43%; height: 70.8%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center; justify-items: center; }
+.ppt-journey__visuals > div { width: 100%; height: 100%; overflow: hidden; }
+.ppt-journey__visuals .ppt-media { object-fit: contain; object-position: center; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1)); }
+.ppt-case--journey .ppt-metric-bar { right: 0; bottom: 0; left: 0; min-height: 12%; }
+
+@media (max-width: 720px) {
+  .ppt-case--journey .ppt-case__left { top: 105px; left: 22px; right: 22px; width: auto; }
+  .ppt-journey__visuals { top: 560px; right: 22px; left: 22px; width: auto; height: 320px; gap: 12px; }
+  .ppt-case--journey .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
+}
