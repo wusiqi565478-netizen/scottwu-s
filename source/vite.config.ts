@@ -206,6 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
+  // Keep local builds at the domain root; project-page builds set VITE_BASE_PATH=/scottwu-s/.
+  base: process.env.VITE_BASE_PATH ?? "/",
   plugins,
   resolve: {
     alias: {
