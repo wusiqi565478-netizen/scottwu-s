@@ -3,13 +3,20 @@ import { cases } from "@/data/cases";
 const portrait =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/rLhOZusYtucyAeIu.webp";
 
-const [jeepJourneyToLight, jeepTrailhawk, hycan, jeepFilm, jeepCovid, wuling, anta, jeepSuv, dyson] = cases;
+const [ufsChef, jeepJourneyToLight, jeepTrailhawk, hycan, jeepFilm, jeepCovid, wuling, anta, jeepSuv, dyson] = cases;
 
 const short = (copy: string, limit: number) =>
   copy.length > limit ? `${copy.slice(0, limit).trim()}…` : copy;
 
 // Preserve the established sequence in the overview, then append the new cases.
-const overviewCases = [...cases.slice(2), cases[1], cases[0]];
+const overviewCases = [...cases.slice(3), cases[2], cases[1], cases[0]];
+
+const ufsImages = [
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/cDETdrgdIqfUzNWl.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/IwAVGkHgtHrtzmRA.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/aQAZXXyRpyCZCbVo.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/OICQjftEMoxUEMNg.png',
+];
 
 const journeyImages = [
   'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/qJynGuFmMPhiEfUz.png',
@@ -129,7 +136,7 @@ export default function PptPortfolio() {
       </SlideChrome>
 
       <SlideChrome label="SELECTED WORK" context="Scott Wu · Selected Work" className="ppt-overview">
-        <h2>9 Cases Across Automotive, Lifestyle &amp; E-Commerce</h2>
+        <h2>10 Cases Across Automotive, Lifestyle &amp; E-Commerce</h2>
         <div className="ppt-overview__table">
           <div className="ppt-overview__head"><span>#</span><span>CLIENT</span><span>CAMPAIGN</span><span>KEY RESULT</span></div>
           {overviewCases.map((item, index) => (
@@ -274,6 +281,23 @@ export default function PptPortfolio() {
           {journeyImages.map((src, index) => <div key={src}><Media src={src} alt={`${jeepJourneyToLight.title.en} screen ${index + 1}`} /></div>)}
         </section>
         <footer className="ppt-metric-bar ppt-metric-bar--three">{jeepJourneyToLight.metrics.map((m) => <Metric key={m.value} value={m.value} label={m.label.en} />)}</footer>
+      </SlideChrome>
+
+      <SlideChrome label="CASE 10" context="Unilever Food Solutions" className="ppt-case ppt-case--ufs">
+        <section className="ppt-case__left">
+          <h2>UFS &quot;Chefs: Igniting<br />the Extraordinary&quot;</h2>
+          <p className="ppt-case__tagline">Shifting the B2B brand narrative from the dining table to the back-of-house heroes</p>
+          <div className="ppt-grid-two">
+            <Narrative index="01" label="BACKGROUND">{short(ufsChef.background.en, 230)}</Narrative>
+            <Narrative index="02" label="INSIGHT">{short(ufsChef.insight.en, 230)}</Narrative>
+            <Narrative index="03" label="ACTION">{short(ufsChef.action.en, 270)}</Narrative>
+            <Narrative index="04" label="RESULT">{short(ufsChef.result.en, 240)}</Narrative>
+          </div>
+        </section>
+        <section className="ppt-ufs__visuals" aria-label="UFS Chefs campaign visuals">
+          {ufsImages.map((src, index) => <div key={src}><Media src={src} alt={`${ufsChef.title.en} video still ${index + 1}`} /></div>)}
+        </section>
+        <footer className="ppt-metric-bar ppt-metric-bar--three">{ufsChef.metrics.map((m) => <Metric key={m.value} value={m.value} label={m.label.en} />)}</footer>
       </SlideChrome>
 
       <SlideChrome label="GET IN TOUCH" dark className="ppt-closing">

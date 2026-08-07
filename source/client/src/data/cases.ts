@@ -18,6 +18,42 @@ export interface CaseStudy {
 
 export const cases: CaseStudy[] = [
   {
+    id: 'ufs-chef-cny',
+    client: 'Unilever Food Solutions',
+    title: {
+      zh: '联合利华饮食策划《做厨师，燃而不凡》',
+      en: 'UFS "Chefs: Igniting the Extraordinary"',
+    },
+    tagline: {
+      zh: '将 B2B 品牌沟通视角从餐桌转向后厨的幕后英雄',
+      en: 'Shifting the B2B brand narrative from the dining table to the back-of-house heroes',
+    },
+    awards: [],
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663338382315/OICQjftEMoxUEMNg.png',
+    background: {
+      zh: '春节是餐饮行业最繁忙的节点之一。无数家庭期待一桌团圆饭，而餐厅后厨里的厨师则需要长时间高强度工作，以保障年宴顺利出品。围绕这一群体，联合利华饮食策划在 2018 年春节推出品牌内容《做厨师，燃而不凡》。',
+      en: 'Chinese New Year is the busiest season for the catering industry. While millions of families anticipate their reunion dinners, chefs endure grueling, high-intensity shifts to ensure flawless service. To honor this community, Unilever Food Solutions launched the brand film "Chefs: Igniting the Extraordinary" during the 2018 CNY season.',
+    },
+    insight: {
+      zh: '家乐的受众是厨师，但在焦点小组讨论中发现，厨师们普遍认为自己的地位不高，大多的自我认同也不高。消费者感受到的是美味与团圆，却看不到厨师的持续付出。对于厨师而言，春节是一场需要热情、专业与耐力支撑的“年宴硬仗”。品牌因此将沟通视角转向后厨，为厨师提供认可与情感鼓励。',
+      en: 'UFS\'s core audience is chefs. Through focus groups, we discovered a widespread lack of professional self-esteem among them, often burdened by the dismissive label of "cook." While consumers savor reunion dinners, the relentless dedication behind the kitchen doors remains unseen. For chefs, CNY is a grueling battle demanding passion and endurance. We shifted the perspective to the kitchen, offering genuine recognition and emotional support.',
+    },
+    action: {
+      zh: '品牌推出时长 2 分 56 秒 的视频《做厨师，燃而不凡》，聚焦厨师在后厨中长期坚守、十几小时连轴工作的真实状态。用“火一般的热情”“忙碌没有度”“坚持无限度”等表达，强化厨师对年宴服务的投入，将厨师做出的美味与万家团圆相连接，完成职业价值的情感升华。',
+      en: 'We released a 2-minute-56-second brand film anchored by the narrative: "Every family anticipates the taste of reunion; chefs are the unsung heroes behind it." The film spotlighted the authentic, grueling reality of kitchen life. Using compelling copy like "450-degree passion" and "limitless perseverance," we bridged the chefs\' culinary craft with the joy of family reunions, elevating their professional worth.',
+    },
+    result: {
+      zh: '该内容通过春节团圆这一公共情感场景，为厨师职业发声，将品牌沟通从产品层面延伸至对餐饮从业者的理解、尊重与鼓励，并强化了联合利华饮食策划与厨师群体之间的情感连接。',
+      en: 'Leveraging the universal emotional context of Chinese New Year, the campaign gave a powerful voice to the culinary profession. It successfully elevated the brand\'s communication from mere product features to a profound demonstration of understanding, respect, and encouragement, significantly strengthening the emotional bond between UFS and the chef community.',
+    },
+    metrics: [
+      { value: '"Igniting the Extraordinary"', label: { zh: '核心创意主张', en: 'Core Creative Concept' } },
+      { value: 'B2B Emotional Marketing', label: { zh: '营销策略', en: 'Campaign Strategy' } },
+      { value: 'Brand Empathy', label: { zh: '职业价值认同', en: 'Professional Recognition' } },
+    ],
+    tags: ['B2B营销', '情感营销', '视频创意', '餐饮'],
+  },
+  {
     id: 'jeep-journey-to-light',
     client: 'Jeep × GAC',
     title: {

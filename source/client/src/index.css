@@ -452,3 +452,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ppt-journey__visuals { top: 560px; right: 22px; left: 22px; width: auto; height: 320px; gap: 12px; }
   .ppt-case--journey .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
 }
+
+
+/* Case 10: UFS Chef */
+.ppt-case--ufs .ppt-case__left { position: absolute; top: 16.9%; left: 5.7%; width: 47%; }
+.ppt-case--ufs .ppt-grid-two { margin-top: 13%; }
+.ppt-ufs__visuals { position: absolute; top: 10.4%; right: 5.7%; width: 43%; height: 70.8%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; align-items: center; justify-items: center; }
+.ppt-ufs__visuals > div { width: 100%; height: 100%; overflow: hidden; background: #000; }
+.ppt-ufs__visuals .ppt-media { object-fit: cover; object-position: center; }
+.ppt-case--ufs .ppt-metric-bar { right: 0; bottom: 0; left: 0; min-height: 12%; }
+
+@media (max-width: 720px) {
+  .ppt-case--ufs .ppt-case__left { top: 105px; left: 22px; right: 22px; width: auto; }
+  .ppt-ufs__visuals { top: 560px; right: 22px; left: 22px; width: auto; height: 250px; gap: 4px; }
+  .ppt-case--ufs .ppt-metric-bar { bottom: 24px; left: 22px; right: 22px; min-height: 70px; }
+}
