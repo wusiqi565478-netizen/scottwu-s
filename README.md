@@ -11,7 +11,7 @@ The production website is served from the repository root (`index.html` and `ass
 The editable React + Tailwind source is retained in `source/`. To update the site locally:
 
 1. Open `source/` and install dependencies with `pnpm install`.
-2. Run `pnpm build`.
+2. Run `VITE_BASE_PATH=/scottwu-s/ pnpm build` so all static assets target this GitHub Pages project path.
 3. Copy the resulting `dist/public/` contents to the repository root, preserving this `README.md`, `.nojekyll`, and `source/` directory.
 4. Commit and push to `main`.
 
